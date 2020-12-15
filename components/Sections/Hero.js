@@ -25,7 +25,7 @@ export default function HeroSection() {
       style={{ opacity: 1 - opacity, transform: `scale(${1 - opacity / 5})` }}
       className="fixed inset-0 h-screen max-w-5xl px-4 md:px-8 mx-auto w-full flex items-center"
     >
-      <div data-aos="fade-up" className="md:max-w-lg relative z-10">
+      <div className="md:max-w-lg relative z-10">
         <p className="text-gray-600 font-medium text-xl uppercase tracking-tight leading-none">
           Hello! I'M
         </p>

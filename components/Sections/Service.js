@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function ServiceSection() {
   return (
     <section className="z-10 relative bg-gray-50 py-16 lg:py-24">
-      <a id="services" className="sr-only" style={{ top: "-79px" }}></a>
+      <a href="javascript:void(0)" id="services" className="sr-only" style={{ top: "-79px" }}></a>
       <div className="max-w-5xl mx-auto px-4 md:px-8">
         <p className="text-center">What I can do for you</p>
         <h2 className="font-semibold tracking-tight mt-1 md:mt-2 text-4xl md:text-5xl text-center">
