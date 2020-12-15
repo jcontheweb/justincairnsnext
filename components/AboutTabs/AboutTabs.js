@@ -103,6 +103,7 @@ export default function AboutTabs() {
             lazy="true"
             layout="fill"
             className="object-cover"
+            alt="another image of justin cairns"
           />
         </div>
         <div
