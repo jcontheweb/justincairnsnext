@@ -4,7 +4,7 @@ import socials from "../SocialBar/socials.data";
 export default function Footer() {
   return (
     // <footer className="bg-black px-4 md:px-8 pt-32 z-20 relative mt-16">
-    <footer className="bg-black px-4 md:px-8 pt-8 z-20 relative">
+    <footer className="bg-black px-4 md:px-8 pt-8 z-20 relative overflow-hidden">
       {/* <div className="max-w-5xl w-full mx-auto footer -mt-56 py-16 border border-white flex items-center justify-center">
         <div className="max-w-lg w-full text-center">
           <h3 className="font-medium text-3xl text-white tracking-tight">

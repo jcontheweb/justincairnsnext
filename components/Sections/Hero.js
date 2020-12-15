@@ -12,7 +12,7 @@ export default function HeroSection() {
       const heroHeight = heroRef.current.scrollHeight;
       const pageScrolled = window.pageYOffset;
       setOpacity((pageScrolled / heroHeight) * 1.5);
-    });
+    }, { passive: true});
   }, []);
   return (
     <section

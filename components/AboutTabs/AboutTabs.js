@@ -1,31 +1,13 @@
 import { useState, useEffect, useRef } from "react";
-import Intro from "./intro";
-import ExpertArea from "./expert-area";
-import Experience from "./experience";
+import tabs from "./tabs.data";
 
 export default function AboutTabs() {
   const tabRef = useRef();
-  const [tab, setTab] = useState("Intro");
-  const tabs = ["Intro", "ExpertArea", "Experience"];
-  const getTab = () => {
-    switch (tab) {
-      case "Intro":
-        return <Intro />;
-        break;
-      case "ExpertArea":
-        return <ExpertArea />;
-        break;
-      case "Experience":
-        return <Experience />;
-        break;
-      default:
-        return <Intro />;
-    }
-  };
+  const [tab, setTab] = useState(tabs[0]);
 
   useEffect(() => {
-    tabRef.current.addEventListener("touchstart", handleTouchStart, false);
-    tabRef.current.addEventListener("touchmove", handleTouchMove, false);
+    tabRef.current.addEventListener("touchstart", handleTouchStart, {passive: true}, false);
+    tabRef.current.addEventListener("touchmove", handleTouchMove, {passive: true}, false);
   }, []);
 
   var xDown = null;
@@ -58,23 +40,23 @@ export default function AboutTabs() {
         /* left swipe */
         setTab((prevTab) => {
           if (tabs.indexOf(prevTab) > 0) {
-            return tabs[(tabs.indexOf(prevTab)-1)]
+            return tabs[tabs.indexOf(prevTab) - 1];
           } else {
-            return prevTab
+            return prevTab;
           }
-        })
+        });
       } else {
         /* right swipe */
         setTab((prevTab) => {
-          if (tabs.indexOf(prevTab) < tabs.length -1) {
-            return tabs[tabs.indexOf(prevTab)+1]
+          if (tabs.indexOf(prevTab) < tabs.length - 1) {
+            return tabs[tabs.indexOf(prevTab) + 1];
           } else {
-            return prevTab
+            return prevTab;
           }
-        })
+        });
       }
     }
-    
+
     /* reset values */
     xDown = null;
     yDown = null;
@@ -82,36 +64,18 @@ export default function AboutTabs() {
   return (
     <>
       <div className="max-w-2xl mx-auto flex md:text-lg text-gray-600">
-        <button
-          onClick={() => setTab("Intro")}
-          className={`${
-            tab == "Intro"
-              ? "opacity-100 font-semibold border-gray-600"
-              : "opacity-75"
-          } transition-all duration-100 flex-1 border-b-2 py-2 md:py-4 focus:outline-none focus:ring-2`}
-        >
-          Intro.
-        </button>
-        <button
-          onClick={() => setTab("ExpertArea")}
-          className={`${
-            tab == "ExpertArea"
-              ? "opacity-100 font-semibold border-gray-600"
-              : "opacity-75"
-          } transition-all duration-100 flex-1 border-b-2 py-2 md:py-4 focus:outline-none focus:ring-2`}
-        >
-          Expert Area
-        </button>
-        <button
-          onClick={() => setTab("Experience")}
-          className={`${
-            tab == "Experience"
-              ? "opacity-100 font-semibold border-gray-600"
-              : "opacity-75"
-          } transition-all duration-100 flex-1 border-b-2 py-2 md:py-4 focus:outline-none focus:ring-2`}
-        >
-          Experience
-        </button>
+        {tabs.map((item) => (
+          <button
+            className={`${
+              tab == item
+                ? "opacity-100 font-semibold border-gray-600"
+                : "opacity-75"
+            } transition-all duration-100 flex-1 border-b-2 py-2 md:py-4 focus:outline-none focus:ring-2`}
+            onClick={() => setTab(item)}
+          >
+            {item.title}
+          </button>
+        ))}
       </div>
       <div className="flex mt-8 md:mt-16">
         <div className="hidden md:block" data-aos="fade-right">
@@ -122,7 +86,7 @@ export default function AboutTabs() {
           data-aos="fade-up"
           className="flex-1 md:ml-16 text-black"
         >
-          {getTab()}
+          {tab.component}
         </div>
       </div>
     </>
