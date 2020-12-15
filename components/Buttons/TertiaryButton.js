@@ -1,4 +1,4 @@
-export default function TertiaryButton({ size, children }) {
+export default function TertiaryButton({ size, children, href }) {
     const sizes = {
       md: "px-6",
       lg: "px-8",
@@ -7,7 +7,7 @@ export default function TertiaryButton({ size, children }) {
   
     return (
       <a
-        href=""
+        href={href}
         className={`${
           size ? sizes : "px-4"
         } py-4 font-medium leading-none w-full block inline-block rounded-full bg-white text-black shadow-none transition-all duration-300 hover:shadow-xl focus:shadow-none`}

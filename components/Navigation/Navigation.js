@@ -67,9 +67,9 @@ export default function Navigation() {
             </div>
           ))}
           {theme == "light" ? (
-            <PrimaryButton size="md">Contact</PrimaryButton>
+            <PrimaryButton href="tel:+16475575150" size="md">Contact</PrimaryButton>
           ) : (
-            <TertiaryButton size="md">Contact</TertiaryButton>
+            <TertiaryButton href="tel:+16475575150" size="md">Contact</TertiaryButton>
           )}
         </div>
       </nav>

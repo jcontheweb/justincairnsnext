@@ -1,6 +1,7 @@
-export default function SocialBarItem({ icon, url }) {
+export default function SocialBarItem({ icon, url, name }) {
   return (
     <a
+      aria-label={name}
       href={url}
       target="__blank"
       className="border border-gray-50 p-4 mb-6 rounded-full flex text-black hover:text-white items-center justify-center bg-white shadow-lg transition-all duration-300 hover:bg-black"

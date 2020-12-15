@@ -39,6 +39,7 @@ export default function Footer() {
         <div className="flex items-center justify-center mt-6 md:mt-0">
           {socials.map((social) => (
             <a
+              aria-label={social.name}
               href={social.url}
               target="__blank"
               className="border border-black p-2 ml-2 rounded-full flex text-black hover:text-white items-center justify-center bg-white transition-all duration-300 hover:bg-black"

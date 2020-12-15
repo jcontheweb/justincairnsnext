@@ -1,6 +1,3 @@
-import PrimaryButton from '../Buttons/PrimaryButton'
-import SecondaryButton from '../Buttons/SecondaryButton'
-
 export default function Intro() {
   return (
     <>
@@ -18,14 +15,6 @@ export default function Intro() {
         UX specifications through the user-centered design process and
         wireframes.
       </p>
-      <div className="md:flex mt-8">
-        <div className="mb-4 md:mb-0 md:mr-4">
-          <PrimaryButton size="xl">Hire Me</PrimaryButton>
-        </div>
-        <div>
-          <SecondaryButton size="md">Download CV</SecondaryButton>
-        </div>
-      </div>
     </>
   );
 }
