@@ -74,6 +74,7 @@ export default function AboutTabs() {
         })
       }
     }
+    
     /* reset values */
     xDown = null;
     yDown = null;
