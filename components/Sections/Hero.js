@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 import PrimaryButton from "../Buttons/PrimaryButton";
 import SecondaryButton from "../Buttons/SecondaryButton";
@@ -8,11 +9,15 @@ export default function HeroSection() {
   const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const heroHeight = heroRef.current.scrollHeight;
-      const pageScrolled = window.pageYOffset;
-      setOpacity((pageScrolled / heroHeight) * 1.5);
-    }, { passive: true});
+    window.addEventListener(
+      "scroll",
+      () => {
+        const heroHeight = heroRef.current.scrollHeight;
+        const pageScrolled = window.pageYOffset;
+        setOpacity((pageScrolled / heroHeight) * 1.5);
+      },
+      { passive: true }
+    );
   }, []);
   return (
     <section
@@ -43,8 +48,16 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <div data-aos="fade-left" className="w-135 sm:w-full absolute inset-0 lg:top-auto lg:left-auto lg:bottom-0 lg:right-hero lg:max-w-2xl">
-        <img className="w-full opacity-25 lg:opacity-100" src="/me2.png" alt="" />
+      <div className="w-135 sm:w-full absolute opacity-25 lg:opacity-100 inset-0 lg:top-auto lg:left-auto lg:bottom-0 lg:right-hero lg:max-w-2xl">
+        <div className="relative h-screen">
+          <Image
+            quality={100}
+            layout="fill"
+            objectFit="cover"
+            src="/me2.png"
+            alt="a picture of justin cairns"
+          />
+        </div>
       </div>
     </section>
   );

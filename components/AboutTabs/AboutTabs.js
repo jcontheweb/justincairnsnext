@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import Image from 'next/image'
 import tabs from "./tabs.data";
 
 export default function AboutTabs() {
@@ -78,8 +79,8 @@ export default function AboutTabs() {
         ))}
       </div>
       <div className="flex mt-8 md:mt-16">
-        <div className="hidden md:block" data-aos="fade-right">
-          <img src="/me.png" alt="" />
+        <div className="hidden md:block relative" style={{height: "395px", width:"305px"}} data-aos="fade-right">
+          <Image src="/me.png" quality={100} lazy="true" layout="fill" className="object-cover" />
         </div>
         <div
           ref={tabRef}
