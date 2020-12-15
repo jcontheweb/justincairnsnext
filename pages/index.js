@@ -1,6 +1,8 @@
-import HeroSection from "../components/Sections/Hero";
-import AboutSection from "../components/Sections/About";
-import ServiceSection from "../components/Sections/Service";
+import dynamic from 'next/dynamic'
+
+const HeroSection = dynamic(import('../components/Sections/Hero'))
+const AboutSection = dynamic(import('../components/Sections/About'))
+const ServiceSection = dynamic(import('../components/Sections/Service'))
 
 export default function Home() {
   return (
@@ -8,11 +10,6 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ServiceSection />
-      {/* <div className="bg-black py-32 relative overflow-hidden">
-
-      </div> */}
-      {/* <section id="portfolio" className="h-screen"></section>
-      <section id="testimonial" className="h-screen"></section> */}
     </div>
   );
 }
