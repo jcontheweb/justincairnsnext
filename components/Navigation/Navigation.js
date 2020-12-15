@@ -11,19 +11,19 @@ const routes = [
     label: "Home",
   },
   {
-    link: "#about",
+    link: "/#about",
     label: "About",
   },
   {
-    link: "#services",
+    link: "/#services",
     label: "Services",
   },
   {
-    link: "#portfolio",
+    link: "/#portfolio",
     label: "Portfolio",
   },
   {
-    link: "#testimonial",
+    link: "/#testimonial",
     label: "Testimonial",
   },
 ];
@@ -49,7 +49,7 @@ export default function Navigation() {
 
   return (
     <header
-      className={`${styles} z-20 fixed top-0 inset-x-0 transition-all duration-300`}
+      className={`${styles} z-50 fixed top-0 inset-x-0 transition-all duration-300`}
     >
       <nav className="flex items-center justify-between max-w-5xl md:px-8 px-4 mx-auto w-full py-4">
         <Link href="/">

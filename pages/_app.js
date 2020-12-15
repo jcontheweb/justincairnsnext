@@ -1,13 +1,14 @@
-import { useEffect } from 'react'
-import dynamic from 'next/dynamic'
+import { useEffect } from "react";
+import Head from 'next/head'
+import dynamic from "next/dynamic";
 import "tailwindcss/tailwind.css";
-import "../assets/style.css"
+import "../assets/style.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Navigation = dynamic(import('../components/Navigation/Navigation'))
-const Footer = dynamic(import('../components/Footer/Footer'))
-const SocialBar = dynamic(import('../components/SocialBar/SocialBar'))
+const Navigation = dynamic(import("../components/Navigation/Navigation"));
+const Footer = dynamic(import("../components/Footer/Footer"));
+const SocialBar = dynamic(import("../components/SocialBar/SocialBar"));
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -19,6 +20,10 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <div className="text-black">
+      <Head>
+        <title>Justin Cairns | Web Developer</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Navigation />
       <SocialBar />
       <Component {...pageProps} />

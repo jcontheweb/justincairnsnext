@@ -77,12 +77,13 @@ export default function AboutTabs() {
   return (
     <>
       <div className="max-w-2xl mx-auto flex md:text-lg text-gray-600">
-        {tabs.map((item) => (
+        {tabs.map((item, index) => (
           <button
+            key={index}
             className={`${
               tab == item
                 ? "opacity-100 font-semibold border-gray-600"
-                : "opacity-75"
+                : ""
             } transition-all duration-100 flex-1 border-b-2 py-2 md:py-4 focus:outline-none focus:ring-2`}
             onClick={() => setTab(item)}
           >

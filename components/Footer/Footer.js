@@ -37,8 +37,9 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex items-center justify-center mt-6 md:mt-0">
-          {socials.map((social) => (
+          {socials.map((social, index) => (
             <a
+              key={index}
               aria-label={social.name}
               href={social.url}
               target="__blank"
