@@ -1,39 +1,50 @@
 import TertiaryButton from "../Buttons/TertiaryButton";
-import socials from "../SocialBar/socials.data";
+import socials from "../../shared/socials.data";
+import contact from "../../shared/contact.data";
 
 export default function Footer() {
   return (
-    // <footer className="bg-black px-4 md:px-8 pt-32 z-20 relative mt-16">
-    <footer className="bg-black px-4 md:px-8 pt-8 z-20 relative overflow-hidden">
-      {/* <div className="max-w-5xl w-full mx-auto footer -mt-56 py-16 border border-white flex items-center justify-center">
-        <div className="max-w-lg w-full text-center">
-          <h3 className="font-medium text-3xl text-white tracking-tight">
+    // <footer className="relative z-20 px-4 pt-32 mt-16 bg-black md:px-8">
+    <footer className="relative z-20 px-4 pt-8 overflow-hidden bg-black md:px-8">
+      {/* <div className="flex items-center justify-center w-full max-w-5xl py-16 mx-auto -mt-56 border border-white footer">
+        <div className="w-full max-w-lg text-center">
+          <h3 className="text-3xl font-medium tracking-tight text-white">
             Have a project in mind or role to fill?
           </h3>
           <a
             href=""
-            className="font-medium block text-2xl mt-2 text-opacity-75 text-white tracking-tight underline transition duration-200 hover:text-opacity-100"
+            className="block mt-2 text-2xl font-medium tracking-tight text-white text-opacity-75 underline transition duration-200 hover:text-opacity-100"
           >
             hello@justincairns.ca
           </a>
         </div>
       </div> */}
-      <div className="max-w-4xl w-full mx-auto bg-white p-8 relative md:flex justify-between">
-      {/* <div className="max-w-4xl w-full mx-auto mt-16 bg-white p-8 relative flex overflow-hidden justify-between"> */}
+      <div className="relative justify-between w-full max-w-4xl p-8 mx-auto bg-white md:flex">
+        {/* <div className="relative flex justify-between w-full max-w-4xl p-8 mx-auto mt-16 overflow-hidden bg-white"> */}
         <img
           className="absolute w-24 opacity-25"
           style={{ top: "-12px", right: "-20px" }}
           src="/dots-box.svg"
           alt=""
         />
-        <div className="md:flex font-medium text-center md:text-left">
+        <div className="font-medium text-center md:flex md:text-left">
           <div className="leading-none">
-            <p>Glasgow, UK</p>
-            <p className="mt-1">Toronto, Canada</p>
+            {contact.locations.map((location) => (
+              <p className="flex items-center mb-1 last:mb-0">
+                <span className="mr-px text-xs">📍</span>
+                {location}
+              </p>
+            ))}
           </div>
-          <div className="md:ml-24 leading-none mt-6 md:mt-0">
-            <p>+16475575150</p>
-            <p className="mt-1">hello@justincairns.ca</p>
+          <div className="mt-6 leading-none md:ml-24 md:mt-0">
+            <p>
+              <span className="mr-px text-xs">📞</span>
+              <a href={`tel:${contact.tel}`}>{contact.tel}</a>
+            </p>
+            <p className="mt-1">
+              <span className="mr-px text-xs">📧</span>
+              <a href={`mailto:${contact.email}`}>{contact.email}</a>
+            </p>
           </div>
         </div>
         <div className="flex items-center justify-center mt-6 md:mt-0">
@@ -43,11 +54,11 @@ export default function Footer() {
               aria-label={social.name}
               href={social.url}
               target="__blank"
-              className="border border-black p-2 ml-2 rounded-full flex text-black hover:text-white items-center justify-center bg-white transition-all duration-300 hover:bg-black"
+              className="flex items-center justify-center p-2 ml-2 text-black transition-all duration-300 bg-white border border-black rounded-full hover:text-white hover:bg-black"
             >
               <svg
                 dangerouslySetInnerHTML={{ __html: social.icon }}
-                className="flex items-center fill-current w-4"
+                className="flex items-center w-4 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               ></svg>
@@ -55,9 +66,11 @@ export default function Footer() {
           ))}
         </div>
       </div>
-        <div className="max-w-4xl w-full mx-auto py-4 text-white text-center">
-            <span className="text-sm">Copyright @justincairns.ca 2020</span>
-        </div>
+      <div className="w-full max-w-4xl py-4 mx-auto text-center text-white">
+        <span className="text-sm">
+          Copyright &copy;justincairns.ca {new Date().getFullYear()}
+        </span>
+      </div>
     </footer>
   );
 }

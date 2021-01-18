@@ -15,7 +15,7 @@ export default function NavigationLink({ router, link, label, theme }) {
   return (
     <Link href={link}>
       <a
-        className={`${styles} border-b-2 text-sm uppercase tracking-tight font-medium flex leading-none`}
+        className={`${styles} border-b-2 text-xs uppercase font-medium flex leading-none`}
       >
         {label}
       </a>

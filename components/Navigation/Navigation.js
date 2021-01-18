@@ -2,31 +2,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import NavigationLink from "./NavigationLink";
-import PrimaryButton from "../Buttons/PrimaryButton";
-import TertiaryButton from "../Buttons/TertiaryButton";
-
-const routes = [
-  {
-    link: "/",
-    label: "Home",
-  },
-  {
-    link: "/#about",
-    label: "About",
-  },
-  {
-    link: "/#services",
-    label: "Services",
-  },
-  {
-    link: "/#portfolio",
-    label: "Portfolio",
-  },
-  {
-    link: "/#testimonial",
-    label: "Testimonial",
-  },
-];
+import ContactButton from '../Buttons/ContactButton'
+import routes from "./navigation.data";
 
 export default function Navigation() {
   const router = useRouter();
@@ -51,11 +28,11 @@ export default function Navigation() {
     <header
       className={`${styles} z-50 fixed top-0 inset-x-0 transition-all duration-300`}
     >
-      <nav className="flex items-center justify-between max-w-5xl md:px-8 px-4 mx-auto w-full py-4">
+      <nav className="flex items-center justify-between w-full max-w-5xl px-4 py-4 mx-auto md:px-8">
         <Link href="/">
-          <a className="font-bold text-lg leading-none">justincairns.ca</a>
+          <a className="text-lg font-bold leading-none">justincairns.ca</a>
         </Link>
-        <div className="hidden md:flex items-center">
+        <div className="items-center hidden md:flex">
           {routes.map((route, index) => (
             <div key={index} className="mr-10">
               <NavigationLink
@@ -66,11 +43,7 @@ export default function Navigation() {
               />
             </div>
           ))}
-          {theme == "light" ? (
-            <PrimaryButton href="tel:+16475575150" size="md">Contact</PrimaryButton>
-          ) : (
-            <TertiaryButton href="tel:+16475575150" size="md">Contact</TertiaryButton>
-          )}
+          <ContactButton theme={theme} />
         </div>
       </nav>
     </header>

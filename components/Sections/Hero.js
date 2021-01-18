@@ -23,40 +23,39 @@ export default function HeroSection() {
     <section
       ref={heroRef}
       style={{ opacity: 1 - opacity, transform: `scale(${1 - opacity / 5})` }}
-      className="fixed inset-0 h-screen max-w-5xl px-4 md:px-8 mx-auto w-full flex items-center"
+      className="fixed inset-0 flex w-full h-screen max-w-5xl px-4 mx-auto lg:items-center md:px-8"
     >
-      <div className="md:max-w-lg relative z-10">
-        <p className="text-gray-600 font-medium text-xl uppercase tracking-tight leading-none">
-          Hello! I'M
-        </p>
-        <h1 className="text-5xl md:text-6xl font-bold capitalize tracking-tight leading-none mt-2">
-          justin cairns
-        </h1>
-        <p className="text-gray-600 font-medium text-2xl leading-none">
-          Full Stack Web Developer
-        </p>
-        <p className="text-gray-400 mt-4 leading-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-          quibusdam ad totam blanditiis nostrum eligendi quos, veritatis velit
-        </p>
-        <div className="md:flex mt-6 md:mt-10">
-          <div className="mb-4 md:mb-0 md:mr-4">
-            <PrimaryButton size="xl">Hire Me</PrimaryButton>
-          </div>
-          <div>
-            <SecondaryButton size="md">Download CV</SecondaryButton>
+      <div className="relative z-10 flex pt-24 md:items-center md:pt-0">
+        <div className="md:max-w-lg">
+          <p className="text-lg font-medium leading-none text-gray-600 uppercase">
+            Hello! I'M
+          </p>
+          <h1 className="mt-2 text-5xl font-bold leading-none tracking-tight capitalize md:text-6xl">
+            justin cairns
+          </h1>
+          <p className="text-2xl font-medium leading-none text-gray-600">
+            Full Stack Web Developer
+          </p>
+          <p className="mt-4 leading-5 text-gray-400">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+            quibusdam ad totam blanditiis nostrum eligendi quos, veritatis velit
+          </p>
+          <div className="mt-6 md:flex md:mt-10">
+            <div className="mb-4 md:mb-0 md:mr-4">
+              <PrimaryButton size="xl">Hire Me</PrimaryButton>
+            </div>
+            <div>
+              <SecondaryButton size="md">Download CV</SecondaryButton>
+            </div>
           </div>
         </div>
+        {/* <div className="hidden pl-16 lg:block animate-bounce" style={{ width: "48rem" }}>
+          <img src="/hero.png" alt="" />
+        </div> */}
       </div>
-      <div className="w-135 sm:w-full absolute opacity-25 lg:opacity-100 inset-0 lg:top-auto lg:left-auto lg:bottom-0 lg:right-hero lg:max-w-2xl">
-        <div className="relative h-screen">
-          <Image
-            quality={100}
-            layout="fill"
-            objectFit="cover"
-            src="/me2.png"
-            alt="a picture of justin cairns"
-          />
+      <div className="absolute inset-0 opacity-10 w-135 sm:w-full lg:top-auto lg:left-auto lg:bottom-0 lg:right-hero lg:max-w-xl">
+        <div className="relative flex items-end h-screen max-w-3xl mx-auto lg:items-center animate-bounce lg:pt-24">
+          <img src="/hero.png" alt="" />
         </div>
       </div>
     </section>
