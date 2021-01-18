@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function ServiceCard({ title, description, image }) {
   return (
     <Link href="/">
-      <a className="relative flex flex-col items-start justify-between p-8 overflow-hidden transition-all duration-200 bg-white border-t border-r border-gray-200 shadow-none group hover:shadow-xl hover:z-10">
+      <a className="relative flex flex-col items-start justify-between p-8 overflow-hidden transition-all duration-200 bg-white border-t border-r border-gray-200 opacity-100 hover:bg-opacity-80 group">
          <img className="absolute top-0 right-0 w-16 pt-2 pr-2 mb-4 transition duration-200 opacity-10 group-hover:opacity-75" src={image} alt=""/>   
         <div>
           <p className="font-semibold tracking-tight">{title}</p>

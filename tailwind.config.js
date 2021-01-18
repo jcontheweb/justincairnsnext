@@ -81,6 +81,8 @@ module.exports = {
       72: "18rem",
       80: "20rem",
       96: "24rem",
+      half: "50vh",
+      screen: "100vh"
     },
     animation: {
       none: "none",
@@ -398,6 +400,7 @@ module.exports = {
       "5/6": "83.333333%",
       full: "100%",
       screen: "100vh",
+      half: "50vh"
     }),
     inset: (theme, { negative }) => ({
       auto: "auto",
@@ -934,5 +937,5 @@ module.exports = {
     wordBreak: ["responsive"],
     zIndex: ["responsive", "focus-within", "focus", "hover"],
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms'),],
 };

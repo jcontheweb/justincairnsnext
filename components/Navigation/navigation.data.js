@@ -8,7 +8,7 @@ export default [
       label: "About",
     },
     {
-      link: "/#services",
+      link: "/#technology",
       label: "Technology",
     },
   ];

@@ -1,10 +1,12 @@
 import { useEffect } from "react";
-import Head from 'next/head'
+import Head from "next/head";
 import dynamic from "next/dynamic";
 import "tailwindcss/tailwind.css";
 import "../assets/style.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+import { ContactFormProvider } from "../context/contact-form/ContactFormState";
 
 const Navigation = dynamic(import("../components/Navigation/Navigation"));
 const Footer = dynamic(import("../components/Footer/Footer"));
@@ -24,10 +26,12 @@ function MyApp({ Component, pageProps }) {
         <title>Justin Cairns | Web Developer</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Navigation />
-      <SocialBar />
-      <Component {...pageProps} />
-      <Footer />
+      <ContactFormProvider>
+        <Navigation />
+        <SocialBar />
+        <Component {...pageProps} />
+        <Footer />
+      </ContactFormProvider>
     </div>
   );
 }

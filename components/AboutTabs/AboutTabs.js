@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import tabs from "./tabs.data";
-import PrimaryButton from '../Buttons/PrimaryButton'
-import SecondaryButton from '../Buttons/SecondaryButton'
+import DownloadButton from '../Buttons/DownloadButton'
+import HireButton from '../Buttons/HireButton'
 
 export default function AboutTabs() {
   const tabRef = useRef();
@@ -75,8 +74,8 @@ export default function AboutTabs() {
     yDown = null;
   }
   return (
-    <>
-      <div className="flex max-w-2xl mx-auto text-gray-600 md:text-lg">
+    <div className="lg:flex">
+      <div className="flex max-w-2xl mx-auto text-gray-600 lg:hidden md:text-lg">
         {tabs.map((item, index) => (
           <button
             key={index}
@@ -91,21 +90,22 @@ export default function AboutTabs() {
           </button>
         ))}
       </div>
-      <div className="flex w-full max-w-2xl mx-auto mt-8">
-        {/* <div
-          className="relative hidden md:block"
-          style={{ height: "395px", width: "305px" }}
-          data-aos="fade-right"
-        >
-          <Image
-            src="/me.png"
-            quality={100}
-            lazy="true"
-            layout="fill"
-            className="object-cover"
-            alt="another image of justin cairns"
-          />
-        </div> */}
+      <div className="hidden w-48 text-xl text-gray-600 lg:block">
+        {tabs.map((item, index) => (
+          <button
+            key={index}
+            className={`${
+              tab == item
+                ? "opacity-100 text-black font-medium border-gray-600"
+                : ""
+            } transition-all duration-100 block border-l-2 px-4 py-1 focus:ring-1 w-full text-left focus:outline-none`}
+            onClick={() => setTab(item)}
+          >
+            {item.title}
+          </button>
+        ))}
+      </div>
+      <div className="flex w-full max-w-2xl pt-2 mx-auto mt-8 lg:mx-0 lg:max-w-none lg:ml-16 lg:mt-0">
         <div
           ref={tabRef}
           data-aos="fade-up"
@@ -114,14 +114,14 @@ export default function AboutTabs() {
           {tab.component}
           <div className="mt-8 md:flex">
             <div className="mb-4 md:mb-0 md:mr-4">
-              <PrimaryButton href="/" size="xl">Hire Me</PrimaryButton>
+              <HireButton />
             </div>
             <div>
-              <SecondaryButton href="/" size="md">Download CV</SecondaryButton>
+              <DownloadButton />
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -29,8 +29,8 @@ export default function Footer() {
         />
         <div className="font-medium text-center md:flex md:text-left">
           <div className="leading-none">
-            {contact.locations.map((location) => (
-              <p className="flex items-center mb-1 last:mb-0">
+            {contact.locations.map((location, index) => (
+              <p key={index} className="flex items-center mb-1 last:mb-0">
                 {location}
               </p>
             ))}
