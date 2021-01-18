@@ -31,18 +31,15 @@ export default function Footer() {
           <div className="leading-none">
             {contact.locations.map((location) => (
               <p className="flex items-center mb-1 last:mb-0">
-                <span className="mr-px text-xs">📍</span>
                 {location}
               </p>
             ))}
           </div>
           <div className="mt-6 leading-none md:ml-24 md:mt-0">
             <p>
-              <span className="mr-px text-xs">📞</span>
               <a href={`tel:${contact.tel}`}>{contact.tel}</a>
             </p>
             <p className="mt-1">
-              <span className="mr-px text-xs">📧</span>
               <a href={`mailto:${contact.email}`}>{contact.email}</a>
             </p>
           </div>

@@ -9,6 +9,6 @@ export default [
     },
     {
       link: "/#services",
-      label: "Services",
+      label: "Technology",
     },
   ];

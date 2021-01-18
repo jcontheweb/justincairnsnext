@@ -1,19 +1,13 @@
 export default function ExpertArea() {
   return (
     <>
-      <h2 className="font-medium text-2xl md:text-3xl mt-2 md:mt-4">
-        My expertise
-      </h2>
-      <p className="mt-6 text-sm">
-        Over 4 years of experience working in the IT industry field and a proven
-        history of creating top-notch UI designs and AI for web and mobile
-        applications.
-      </p>
-      <p className="mt-6 text-sm">
-        Understanding business goals and combining logic with aesthetics to
-        create beautiful, consistent and functional design solutions. Developing
-        UX specifications through the user-centered design process and
-        wireframes.
+      <p className="text-sm">
+        During my time as a developer, I've used a wide variety of technologies,
+        gaining experience in both back-end and front-end environments. Although
+        trained as a <strong>full-stack</strong> developer, I believe my
+        expertise lays in the <strong>frontend</strong>, specifically{" "}
+        <strong>User Interface</strong> development, web accessability, and{" "}
+        <strong>User Experience</strong> driven development.
       </p>
     </>
   );

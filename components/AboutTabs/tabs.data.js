@@ -4,11 +4,11 @@ import Experience from './experience'
 
 export default [
   {
-    title: "Intro",
+    title: "Introduction",
     component: <Intro />,
   },
   {
-    title: "Expert Area",
+    title: "Expertise",
     component: <ExpertArea />,
   },
   {

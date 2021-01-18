@@ -23,9 +23,9 @@ export default function HeroSection() {
     <section
       ref={heroRef}
       style={{ opacity: 1 - opacity, transform: `scale(${1 - opacity / 5})` }}
-      className="fixed inset-0 flex w-full h-screen max-w-5xl px-4 mx-auto lg:items-center md:px-8"
+      className="fixed inset-0 flex items-center w-full h-screen max-w-5xl px-4 mx-auto md:px-8"
     >
-      <div className="relative z-10 flex pt-24 md:items-center md:pt-0">
+      <div className="relative z-10 flex">
         <div className="md:max-w-lg">
           <p className="text-lg font-medium leading-none text-gray-600 uppercase">
             Hello! I'M

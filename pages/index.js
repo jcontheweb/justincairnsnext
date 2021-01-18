@@ -7,7 +7,7 @@ const TestimonialSection = dynamic(import('../components/Sections/Testimonials')
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
       <HeroSection />
       <AboutSection />
       <ServiceSection />

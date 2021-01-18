@@ -22,12 +22,11 @@ export default function ContactButton({ theme }) {
 
       {expanded && (
         <div className="absolute right-0 mt-2 top-full">
-          <div className="overflow-hidden text-black bg-white rounded shadow-md whitespace-nowrap">
+          <div className="overflow-hidden text-black bg-white shadow-md whitespace-nowrap">
             <a
-              className="flex items-center px-4 py-4 text-sm font-medium transition duration-200 hover:bg-black hover:text-white focus:bg-black focus:text-white"
+              className="flex items-center px-4 py-4 text-sm font-medium transition duration-200 border-b hover:bg-black hover:text-white focus:bg-black focus:text-white"
               href={`tel:${contact.tel}`}
             >
-              <span className="mr-1 text-sm">📞</span>
               {contact.tel}
             </a>
 
@@ -35,7 +34,6 @@ export default function ContactButton({ theme }) {
               className="flex items-center px-4 py-4 text-sm font-medium transition duration-200 hover:bg-black hover:text-white focus:bg-black focus:text-white"
               href={`tel:${contact.email}`}
             >
-              <span className="mr-1 text-sm">📧</span>
               {contact.email}
             </a>
           </div>

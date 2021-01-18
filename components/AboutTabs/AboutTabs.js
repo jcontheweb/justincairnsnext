@@ -82,7 +82,7 @@ export default function AboutTabs() {
             key={index}
             className={`${
               tab == item
-                ? "opacity-100 font-semibold border-gray-600"
+                ? "opacity-100 text-black font-medium border-gray-600"
                 : ""
             } transition-all duration-100 flex-1 border-b-2 py-2 md:py-4 focus:outline-none focus:ring-2`}
             onClick={() => setTab(item)}
@@ -91,7 +91,7 @@ export default function AboutTabs() {
           </button>
         ))}
       </div>
-      <div className="flex w-full max-w-2xl mx-auto mt-4 md:mt-8">
+      <div className="flex w-full max-w-2xl mx-auto mt-8">
         {/* <div
           className="relative hidden md:block"
           style={{ height: "395px", width: "305px" }}

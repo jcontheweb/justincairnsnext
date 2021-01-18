@@ -1,19 +1,15 @@
 export default function Intro() {
   return (
     <>
-      <h2 className="font-medium text-2xl md:text-3xl mt-2 md:mt-4">
-        Why me for your next project
-      </h2>
-      <p className="mt-6 text-sm">
-        Over 4 years of experience working in the IT industry field and a proven
-        history of creating top-notch UI designs and AI for web and mobile
-        applications.
-      </p>
-      <p className="mt-6 text-sm">
-        Understanding business goals and combining logic with aesthetics to
-        create beautiful, consistent and functional design solutions. Developing
-        UX specifications through the user-centered design process and
-        wireframes.
+      {/* <h2 className="mt-2 text-2xl font-medium md:text-3xl md:mt-4">
+        a bit about me
+      </h2> */}
+      <p className="text-sm">
+        Self-motivated software engineer versed in team, and self sufficient
+        roles. I am seeking a position to further hone my skill set as a
+        developer, where my experience and work ethic will make a direct impact
+        on the team and resulting product. Looking for a full-time, contract, or
+        freelance opportunity either onsite in the Toronto area or remote.
       </p>
     </>
   );
