@@ -12,7 +12,7 @@ export default function HeroSection() {
     window.addEventListener(
       "scroll",
       () => {
-        const heroHeight = heroRef.current.scrollHeight;
+        const heroHeight = heroRef.current && heroRef.current.scrollHeight;
         const pageScrolled = window.pageYOffset;
         setOpacity((pageScrolled / heroHeight) * 1.5);
       },
@@ -49,11 +49,8 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-        {/* <div className="hidden pl-16 lg:block animate-bounce" style={{ width: "48rem" }}>
-          <img src="/hero.png" alt="" />
-        </div> */}
       </div>
-      <div className="absolute inset-0 opacity-10 w-135 sm:w-full lg:top-auto lg:left-auto lg:bottom-0 lg:right-hero lg:max-w-xl">
+      <div className="absolute inset-0 opacity-10 lg:opacity-50 w-135 sm:w-full lg:top-auto lg:left-auto lg:bottom-0 lg:right-hero lg:max-w-xl">
         <div className="relative flex items-end h-screen max-w-3xl mx-auto lg:items-center animate-bounce lg:pt-24">
           <img src="/hero.png" alt="" />
         </div>

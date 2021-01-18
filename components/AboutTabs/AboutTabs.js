@@ -76,7 +76,7 @@ export default function AboutTabs() {
   }
   return (
     <>
-      <div className="max-w-2xl mx-auto flex md:text-lg text-gray-600">
+      <div className="flex max-w-2xl mx-auto text-gray-600 md:text-lg">
         {tabs.map((item, index) => (
           <button
             key={index}
@@ -91,9 +91,9 @@ export default function AboutTabs() {
           </button>
         ))}
       </div>
-      <div className="flex mt-8 md:mt-16">
-        <div
-          className="hidden md:block relative"
+      <div className="flex w-full max-w-2xl mx-auto mt-4 md:mt-8">
+        {/* <div
+          className="relative hidden md:block"
           style={{ height: "395px", width: "305px" }}
           data-aos="fade-right"
         >
@@ -105,14 +105,14 @@ export default function AboutTabs() {
             className="object-cover"
             alt="another image of justin cairns"
           />
-        </div>
+        </div> */}
         <div
           ref={tabRef}
           data-aos="fade-up"
-          className="flex-1 md:ml-16 text-black"
+          className="flex-1 text-black"
         >
           {tab.component}
-          <div className="md:flex mt-8">
+          <div className="mt-8 md:flex">
             <div className="mb-4 md:mb-0 md:mr-4">
               <PrimaryButton href="/" size="xl">Hire Me</PrimaryButton>
             </div>
